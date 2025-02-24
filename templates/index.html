@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soil Classification using AI</title>
+    <link rel="stylesheet" href="static/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand"><h4>🌱 Soil Classification using AI</h4></a>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+    </nav>
+  </header>
+
+    <div class = "baigan">
+        
+      <b><h2>Upload an image or video of the soil to classify its type using our AI model</h2></b>
+
+        <div class="upload-section">
+            <form id="uploadForm" action="/predict" method="POST" enctype="multipart/form-data" onsubmit="return validateInput()">
+                <!-- Image Input -->
+                <div class="input-group" id="imageInput">
+                    <label for="soilImage">📸 Upload Soil Image</label>
+                    <input type="file" id="soilImage" name="soil_image" accept="image/*">
+                </div>
+
+                <!-- Video Input -->
+                <div class="input-group" id="videoInput">
+                    <label for="soilVideo">🎥 Upload Soil Video</label>
+                    <input type="file" id="soilVideo" name="soil_video" accept="video/*">
+                </div>
+
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
+            <div id="errorMessage" class="error-message hidden">
+                <p>Note: Please upload either an image or a video, not both.</p>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="categorize ">
+            <h2>Why AI Over Traditional methods </h2>
+            <p>
+                Soil classification using AI is essential for improving agriculture, environmental conservation, and infrastructure development. 
+                In agriculture, AI-driven soil classification helps farmers understand soil quality and fertility, allowing them to choose the 
+                right crops and optimize fertilizer usage, leading to better yields and reduced costs. Environmental conservation also benefits 
+                from AI-based soil classification, as it helps monitor soil degradation, erosion, and land restoration efforts. By analyzing 
+                soil properties, AI can contribute to combating desertification and climate change.
+            </p>
+        
+        </div>
+        <hr>
+    <h1>Most Popular Soils Found in India..</h1>
+    <div class="container">
+        <div class="box">
+            <img src="static/black.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">BLACK SOIL</h5>
+              <p class="card-text">Also known as Regur soil or cotton soil.Found in Maharashtra, Madhya Pradesh and Gujarat</p>
+              <a href="https://www.britannica.com/place/India/Black-soils" target="_main" class="btn btn-primary">Learn More</a>
+            </div>
+          </div>
+          <div class="box">
+            <img src="static/sandy.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">SANDY SOIL</h5>
+              <p class="card-text">Contains large particles with low water retention. Found in desert and coastal regions.</p>
+              <a href="https://www.fao.org/soils-portal/soil-management/management-of-some-problem-soils/sandy-soils/en/" target="_main" class="btn btn-primary">Learn More</a>
+            </div>
+          </div>
+          <div class="box">
+            <img src="static/loamy.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">LOAMY SOIL</h5>
+              <p class="card-text">A mixture of sand, silt, and clay. Found in plains and river valleys.</p>
+              <a href="https://www.britannica.com/science/loam"  target="_main" class="btn btn-primary">Learn More</a>
+            </div>
+          </div>
+          <div class="box">
+            <img src="static/pp.jpeg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">RED SOIL</h5>
+              <p class="card-text">Red color due to high iron oxide content.Found in eastern and southern India Tamil Nadu, Karnataka and Odisha</p>
+              <a href="https://www.sciencedirect.com/topics/agricultural-and-biological-sciences/red-soil#:~:text=1%20Introduction-,Red%20soil%20is%20known%20as%20reddish%20clay%20minerals%20and%20is,with%20deciduous%20or%20mixed%20forests." target="_main" class="btn btn-primary">Learn More</a>
+            </div>
+          </div>
+          <div class="box">
+            <img src="static/cinder.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">CINDER SOIL</h5>
+              <p class="card-text">Dark, porous, and lightweight soil formed from volcanic ash. Retains less moisture and drains well. Found in volcanic regions.</p>
+              <a href="https://www.yourorganicproducts.com/product/cinder-1kg/" target="_main" class="btn btn-primary">Learn More</a>
+            </div>
+          </div>
+          <div class="box">
+            <img src="static/yellow.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">YELLOW SOIL</h5>
+              <p class="card-text">The yellow color is due to hydrated ferric oxide.Found in Odisha, West Bengal, Chhattisgarh and Jharkhand.</p>
+              <a href="https://www.merriam-webster.com/dictionary/yellow%20soil" target="_main" class="btn btn-primary">Learn More</a>
+            </div>
+          </div>
+    </div>
+</div>
+</hr>
+    <script src="static/script.js"></script>
+</body>
+</html>
